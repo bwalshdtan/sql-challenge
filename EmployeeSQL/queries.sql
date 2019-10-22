@@ -16,3 +16,10 @@ SELECT d.dept_no, d.dept_name, m.emp_no, e.last_name, e.first_name, m.from_date,
 	JOIN employees AS e ON
 	e.emp_no=m.emp_no;
 
+-- 4. List the department of each employee with the following information: employee number, last name, first name, and department name.
+SELECT e.emp_no, e.last_name, e.first_name, n.dept_name
+	FROM employees AS e
+	INNER JOIN dept_emp AS d ON
+	e.emp_no=d.dept_no
+	INNER JOIN departments as n ON
+	n.dept_no=d.dept_no;
