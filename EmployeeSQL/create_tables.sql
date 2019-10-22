@@ -6,7 +6,7 @@ CREATE TABLE departments (
 SELECT * FROM departments;
 
 CREATE TABLE employees (
-	emp_no INT PRIMARY KEY,
+	emp_no VARCHAR PRIMARY KEY,
 	birth_date DATE,
 	first_name VARCHAR,
 	last_name VARCHAR,
@@ -17,8 +17,8 @@ CREATE TABLE employees (
 SELECT * FROM employees;
 
 CREATE TABLE salaries (
-	emp_no INT PRIMARY KEY,
-	salary INT,
+	emp_no VARCHAR PRIMARY KEY,
+	salary VARCHAR,
 	from_date DATE,
 	to_date DATE
 );
@@ -26,7 +26,7 @@ CREATE TABLE salaries (
 SELECT * FROM salaries;
 
 CREATE TABLE titles (
-	emp_no INT,
+	emp_no VARCHAR,
 	title VARCHAR,
 	from_date DATE,
 	to_date VARCHAR,
@@ -36,7 +36,7 @@ CREATE TABLE titles (
 SELECT * FROM titles;
 
 CREATE TABLE dept_emp (
-	emp_no INT,
+	emp_no VARCHAR,
 	dept_no VARCHAR,
 	from_date DATE,
 	to_date VARCHAR,
@@ -48,7 +48,7 @@ SELECT * FROM dept_emp;
 
 CREATE TABLE dept_manager (
 	dept_no VARCHAR,
-	emp_no INT PRIMARY KEY,
+	emp_no VARCHAR PRIMARY KEY,
 	from_date DATE,
 	to_date VARCHAR,
 	FOREIGN KEY (dept_no) REFERENCES departments(dept_no)
