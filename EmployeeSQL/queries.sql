@@ -23,3 +23,18 @@ SELECT e.emp_no, e.last_name, e.first_name, n.dept_name
 	e.emp_no=d.dept_no
 	INNER JOIN departments as n ON
 	n.dept_no=d.dept_no;
+
+-- 5. List all employees whose first name is "Hercules" and last names begin with "B."
+SELECT * FROM employees
+ WHERE first_name LIKE 'Hercules'
+ AND last_name LIKE 'B%';
+
+ -- 6. List all employees in the Sales department, including their employee number, last name, first name, and department name
+SELECT e.emp_no, e.last_name, e.first_name, n.dept_name
+	FROM employees as e
+	INNER JOIN dept_emp AS d ON
+	e.emp_no=d.emp_no
+	INNER JOIN departments as n ON
+	d.dept_no=n.dept_no
+	WHERE n.dept_name LIKE 'Sales';
+
