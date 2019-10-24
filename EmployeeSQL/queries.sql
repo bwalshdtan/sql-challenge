@@ -20,7 +20,7 @@ SELECT d.dept_no, d.dept_name, m.emp_no, e.last_name, e.first_name, m.from_date,
 SELECT e.emp_no, e.last_name, e.first_name, n.dept_name
 	FROM employees AS e
 	INNER JOIN dept_emp AS d ON
-	e.emp_no=d.dept_no
+	e.emp_no=d.emp_no
 	INNER JOIN departments as n ON
 	n.dept_no=d.dept_no;
 
