@@ -6,7 +6,7 @@ SELECT e.emp_no, e.last_name, e.first_name, e.gender, s.salary
 
 -- 2. List employees who were hired in 1986.
 SELECT * FROM employees
-	WHERE hire_date LIKE '1986%';
+	WHERE hire_date::VARCHAR LIKE '1986%';
 
 -- 3. List the manager of each department with the following information: department number, department name, the manager's employee number, last name, first name, and start and end employment dates.
 SELECT d.dept_no, d.dept_name, m.emp_no, e.last_name, e.first_name, m.from_date, m.to_date
